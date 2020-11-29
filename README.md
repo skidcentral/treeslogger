@@ -1,6 +1,6 @@
 # Trees Logger 
 **A simple keylogger with SMTP functionality**
-![Banner](https://i.ibb.co/GnQ1PXR/Untitled.png)
+![Banner](banner.png)
 ### Installation
 Treeslogger needs colorama and pynput.
 `pip3 install colorama, pynput`
