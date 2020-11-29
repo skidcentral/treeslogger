@@ -1,24 +1,35 @@
-###TREES LOGGER VERSION 1,0###
+# Trees Logger 
+**A simple keylogger with SMTP functionality**
+<img src="https://ibb.co/GnQ1PXR">
 
-A simple Keylogger project written in Python3.
-It requires two non-standard modules: colorama and pynput.
+###Installation
+Treeslogger needs colorama and pynput.
+`pip3 install colorama, pynput`
 
-These can be installed by running:
-sudo pip3 install -r requirements.txt
+You will also require a gmail address and password.
+Your gmail will need to enable access to less secure apps.
+To do this log in to your email and head over to:
+`myaccount.google.com/security`
+Scroll down to "*Less Secure Apps Access*" and enable.
+Thats it! You're ready to go.
 
-You will need to enable access to less secure apps on your gmail account.
-To allow the mail to be forwarded over smtp.
+###Useage
+You can start the keylogger by running:
+`python3 ./trees-logger.py`
+Enter your Gmail address and password. (this will send the logged keystrokes)
+Enter an email you want to receive the logs on.
+And you're good to go! The listener will be started and you will be logging keys.
+To stop the listener, press Ctrl & C. This will also trigger sending the email.
 
-    1.	Open your Google Admin console (admin.google.com).
-    2.	Click Security > Basic settings.
-    3.	Under Less secure apps, select Go to settings for less secure apps.
-    4.	In the subwindow, select the Enforce access to less secure apps for all users radio button.
-	(You can also use the Allow users to manage their access to less secure apps, but don't forget to turn on the less secure apps option in users settings then!)
-    5.	Click the Save button.
+###Source Libs
+* Python:	https://www.python.org/downloads/
+* Pynput:	https://pypi.org/project/pynput/
+* Colorama:	https://pypi.org/project/colorama/
+* Email:	https://docs.python.org/3/library/email.html
+* Smtplib:	https://docs.python.org/3/library/smtplib.html
+* Ssl:		https://docs.python.org/3/library/ssl.html
 
-Once the dependencies are installed and your Gmail has the right settings, you can run the keylogger.
-You will be prompted for your gmail credentials, and the email you want to send your logs to.
-A copy of the keylog session will also be saved in trees-logger/logs as well.
-
-Hit Ctrl&C in the terminal running trees-logger to end it, and trigger sending the email copy.
-Feedback on Functionality is appreciated.
+###To Do
+- [x] Include SMTP functionality
+- [ ] Clean up code (Banner, SMTP Process)
+- [ ] Check cross platform functionality (Tested on Linux Mint 20 Ulyana)
