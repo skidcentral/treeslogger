@@ -1,6 +1,6 @@
 # Trees Logger 
 **A simple keylogger with SMTP functionality**
-! (https://ibb.co/GnQ1PXR)
+![Banner](https://ibb.co/GnQ1PXR)
 
 ### Installation
 Treeslogger needs colorama and pynput.
