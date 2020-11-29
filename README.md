@@ -1,8 +1,8 @@
 # Trees Logger 
 **A simple keylogger with SMTP functionality**
-<img src="https://ibb.co/GnQ1PXR">
+! (https://ibb.co/GnQ1PXR)
 
-###Installation
+### Installation
 Treeslogger needs colorama and pynput.
 `pip3 install colorama, pynput`
 
@@ -13,7 +13,7 @@ To do this log in to your email and head over to:
 Scroll down to "*Less Secure Apps Access*" and enable.
 Thats it! You're ready to go.
 
-###Useage
+### Useage
 You can start the keylogger by running:
 `python3 ./trees-logger.py`
 Enter your Gmail address and password. (this will send the logged keystrokes)
@@ -21,7 +21,7 @@ Enter an email you want to receive the logs on.
 And you're good to go! The listener will be started and you will be logging keys.
 To stop the listener, press Ctrl & C. This will also trigger sending the email.
 
-###Source Libs
+### Source Libs
 * Python:	https://www.python.org/downloads/
 * Pynput:	https://pypi.org/project/pynput/
 * Colorama:	https://pypi.org/project/colorama/
@@ -29,7 +29,7 @@ To stop the listener, press Ctrl & C. This will also trigger sending the email.
 * Smtplib:	https://docs.python.org/3/library/smtplib.html
 * Ssl:		https://docs.python.org/3/library/ssl.html
 
-###To Do
+### To Do
 - [x] Include SMTP functionality
 - [ ] Clean up code (Banner, SMTP Process)
 - [ ] Check cross platform functionality (Tested on Linux Mint 20 Ulyana)
