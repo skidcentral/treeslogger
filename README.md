@@ -42,4 +42,4 @@ To stop the listener, press Ctrl & C. This will also trigger sending the email.
 - [x] Include SMTP functionality.
 - [ ] Clean up code (Banner, SMTP Process).
 - [ ] Check cross platform functionality (Tested on Linux Mint 20 Ulyana).
-- [ ] Make Live Terminal Output more human readable.
+- [x] Make Live Terminal Output more human readable.

