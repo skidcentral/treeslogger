@@ -17,7 +17,7 @@ print(Fore.RED + "                            /|  /|")
 print(Fore.WHITE + "---------------------------" + Fore.RED + "(/" + Fore.WHITE + "--" + Fore.RED + "(/" + Fore.WHITE + "---------------")
 
 #Capture the variables for File Naming and use with the UI
-time = datetime.now().strftime("%d-%m-Y%_%H:%M:%S%p")
+time = datetime.now().strftime("%d-%m-%Y_%H:%M:%S%p")
 time_as_string = str(time)
 timestamp = datetime.now().strftime("[%H:%M:%S %p]")
 timestamp_as_string = str(timestamp)
