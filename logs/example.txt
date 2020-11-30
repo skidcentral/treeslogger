@@ -1,0 +1,5 @@
+ <ENTER> 
+ hello <SPACEBAR> this <SPACEBAR> is <SPACEBAR> an <SPACEBAR>  <L_SHIFT> example <SPACEBAR> of <SPACEBAR> some <SPACEBAR> logged <SPACEBAR> keystrokes. <ENTER> 
+ now <SPACEBAR> i <SPACEBAR> will <SPACEBAR> hit <SPACEBAR> some <SPACEBAR> special <SPACEBAR> kes <BACKSPACE> ys <ENTER> 
+  <HOME>  <INSERT>  <DEL>  <PG_DOWN>  <PG_UP>  <END>  <PRINTSC>  <SCRLOCK>  <BREAK>  <F1>  <F2>  <F3>  <F4>  <F5>  <F6>  <F7>  <F8>  <F9>  <F10>  <F11>  <F12>  <ENTER> 
+  <L_SHIFT>  <CAPSLOCK>  <TAB>  <CAPSLOCK> as <SPACEBAR> you <SPACEBAR> can <SPACEBAR> see <SPACEBAR> there <SPACEBAR> ui <BACKSPACE>  <BACKSPACE> is <SPACEBAR> support <SPACEBAR> for <SPACEBAR> almost <SPACEBAR> every <SPACEBAR> ket <BACKSPACE> y <SPACEBAR> which <SPACEBAR> is <SPACEBAR> then <SPACEBAR> logged <SPACEBAR> in <SPACEBAR> a <SPACEBAR> readable <SPACEBAR> formatc <L_CTRL> 
